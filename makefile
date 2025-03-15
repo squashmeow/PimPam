@@ -35,7 +35,7 @@ all_before:
 	@mkdir -p result
 
 ${BUILD_DIR}/host: ${OBJ_DIR}/${HOST_DIR}/main.o ${OBJ_DIR}/${HOST_DIR}/partition.o ${OBJ_DIR}/${HOST_DIR}/mine.o ${OBJ_DIR}/${HOST_DIR}/set_op.o ${OBJ_DIR}/${HOST_DIR}/heap.o
-	@${LINK} ${HOST_LFLAGS} $^ -o $@
+	@${LINK} $^ ${HOST_LFLAGS} -o $@
 
 ${BUILD_DIR}/dpu: ${OBJ_DIR}/${DPU_DIR}/main.o ${OBJ_DIR}/${DPU_DIR}/set_op.o ${OBJ_DIR}/${DPU_DIR}/${PATTERN}.o
 	@${DPULINK} ${DPU_LFLAGS} $^ -o $@
